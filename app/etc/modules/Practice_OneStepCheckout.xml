@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Practice_OneStepCheckout>
+			<active>false</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Sales/>
+				<Mage_CatalogInventory/>
+				<Mage_Checkout/>
+			</depends>
+		</Practice_OneStepCheckout>
+	</modules>
+</config>

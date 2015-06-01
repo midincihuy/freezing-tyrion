@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout>
+	<checkout_onepage_review translate="label">
+		<reference name="checkout.onepage.agreements">
+			<action method="setTemplate">
+				<template>practice/checkoutcomments/onepage/comment-agreements-phtml</template>
+			</action>
+		</reference>
+	</checkout_onepage_review>
+</layout>

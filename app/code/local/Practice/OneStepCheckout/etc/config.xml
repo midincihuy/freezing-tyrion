@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Practice_OneStepCheckout>
+			<version>0.0.1</version>
+		</Practice_OneStepCheckout>
+	</modules>
+
+	<frontend>
+		<routers>
+			<checkout>
+				<args>
+					<modules>
+						<onestepcheckout before="Mage_Checkout">Practice_OneStepCheckout</onestepcheckout>
+					</modules>
+				</args>
+			</checkout>
+		</routers>
+
+		<layout>
+			<updates>
+				<onestepcheckout>
+					<file>onestepcheckout.xml</file>
+				</onestepcheckout>
+			</updates>
+		</layout>
+	</frontend>
+	<!-- <global>
+		<blocks>
+			<onestepcheckout><class>Practice_OneStepCheckout_Block</class></onestepcheckout>
+		</blocks>
+	</global> -->
+	<global>
+		<blocks>
+			<checkout>
+				<rewrite>
+					<onepage>Practice_OneStepCheckout_Block_Onestep</onepage>
+				</rewrite>
+			</checkout>
+		</blocks>
+	</global>
+
+	<stores>
+		<default>
+			<design>
+				<theme>
+					<layout>practice</layout>
+					<template>practice</template>
+					<skin>practice</skin>
+				</theme>
+			</design>
+		</default>
+	</stores>
+</config>

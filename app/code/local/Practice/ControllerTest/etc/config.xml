@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Practice_ControllerTest>
+			<version>0.0.1</version>
+		</Practice_ControllerTest>
+	</modules>
+
+	<frontend>
+		<routers>
+			<test_controller>
+				<use>standard</use>
+				<args>
+					<module>Practice_ControllerTest</module>
+					<frontName>requestflowmidinlagi</frontName>
+				</args>
+			</test_controller>
+		</routers>
+	</frontend>
+</config>
