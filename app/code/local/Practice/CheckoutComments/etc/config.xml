@@ -30,6 +30,12 @@
 				</entities>
 			</checkoutcomments_resource>
 		</models>
+		
+		<blocks>
+			<checkoutcomments>
+				<class>Practice_CheckoutComments_Block</class>
+			</checkoutcomments>
+		</blocks>
 	</global>
 
 	<frontend>
@@ -44,21 +50,46 @@
 		<events>
 			<controller_action_predispatch_checkout_onepage_saveOrder>
 				<observers>
-					<save_checkout_comments>
+					<prepare_checkout_comments>
+						<type>singleton</type>
 						<class>checkoutcomments/observer</class>
 						<method>prepareCheckoutComment</method>
-					</save_checkout_comments>
+					</prepare_checkout_comments>
 				</observers>
 			</controller_action_predispatch_checkout_onepage_saveOrder>
 
 			<sales_order_place_after>
 				<observers>
 					<save_checkout_comments>
+						<type>singleton</type>
 						<class>checkoutcomments/observer</class>
 						<method>saveCheckoutComment</method>
 					</save_checkout_comments>
 				</observers>
-			</saler_order_place_after>
+			</sales_order_place_after>
 		</events>
+		
+		<routers>
+			<checkoutcomments>
+				<use>standard</use>
+				<args>
+					<module>Practice_CheckoutComments</module>
+					<frontName>checkoutcomments</frontName>
+				</args>
+			</checkoutcomments>
+		</routers>
 	</frontend>
+	
+	<adminhtml>
+		<events>
+			<core_block_abstract_to_html_after>
+				<observers>
+					<display_checkout_comment>
+						<class>checkoutcomments/observer</class>
+						<method>displayCheckoutComment</method>
+					</display_checkout_comment>
+				</observers>
+			</core_block_abstract_to_html_after>
+		</events>
+	</adminhtml>
 </config>

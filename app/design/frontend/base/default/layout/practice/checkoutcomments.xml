@@ -3,8 +3,25 @@
 	<checkout_onepage_review translate="label">
 		<reference name="checkout.onepage.agreements">
 			<action method="setTemplate">
-				<template>practice/checkoutcomments/onepage/comment-agreements-phtml</template>
+				<template>practice/checkoutcomments/onepage/comment-agreements.phtml</template>
 			</action>
 		</reference>
 	</checkout_onepage_review>
+	
+	<customer_account>
+		<reference name="customer_account_navigation">
+			<action method="addLink">
+				<name>checkoutcomments</name>
+				<path>checkoutcomments/list/</path>
+				<label>Checkout Comments</label>
+			</action>
+		</reference>
+	</customer_account>
+	
+	<checkoutcomments_list_index>
+		<update handle="customer_account"/>
+		<reference name="content">
+			<block type="checkoutcomments/list" name="checkoutcomments.list" template="practice/checkoutcomments/list.phtml"/>
+		</reference>
+	</checkoutcomments_list_index>
 </layout>
